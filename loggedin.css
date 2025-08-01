@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+   .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+   header h1 {
+    text-align: center;
+    color: #2e8b57;
+    margin-bottom: 20px;
+  }
+   main {
+    padding: 10px;
+  }
+   section h2 {
+    color: #2e8b57;
+    margin-bottom: 10px;
+  }
+   section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+   button {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+  }
+   button:hover {
+    background-color: #3cb371;
+  }
+   .custom-link {
+    color: black;           /* Text color */
+    text-decoration: none;  /* Remove underline */
+    font-weight: bold;      /* Make text bold */
+    cursor: pointer;        /* Show pointer on hover */
+  }
+   .custom-link:hover {
+    color: gray;            /* Change color on hover */
+    text-decoration: underline;  /* Underline on hover */
+  }
+   .logo a {
+    color: black;           /* Make text black */
+    text-decoration: none;  /* Remove underline */
+    cursor: default;        /* Normal arrow cursor, not pointer */
+    font-weight: normal;    /* Normal font weight */
+  }
+   .logo a:hover {
+    color: black;           /* Keep black on hover */
+    text-decoration: none;  /* No underline on hover */
+  }
+ 
+ 
+  .logo {
+    left: 10px;
+    top: 10px;
+    position: absolute;
+    font-family: 'Charis', sans-serif;
+    font-size: 34px;
+    font-weight: bold;
+  }
+ 
