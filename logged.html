@@ -11,19 +11,22 @@
    <div class="logo">
      <a href="index.html">Arch bin</a>
    </div>
- </div>
+ </nav>
+
  <div class="container">
    <header>
      <h1>BinButler Service Signup</h1>
    </header>
+
    <main>
-     <form action="https://script.google.com/macros/s/AKfycbx8NxgYmsMUL5w1MWqjgqcCdATg4vxdYqLTIZKmxS5PYuEQsjJM4KRKv9KYd3rq00-qUw/exec" method="POST">
+     <form id="signupForm" action="https://script.google.com/macros/s/AKfycbx8NxgYmsMUL5w1MWqjgqcCdATg4vxdYqLTIZKmxS5PYuEQsjJM4KRKv9KYd3rq00-qUw/exec" method="POST">
+       
        <!-- Question 1 -->
        <section>
          <h2>1. What is your address for bin service?</h2>
          <input type="text" name="address" placeholder="Enter your address" required>
        </section>
-      
+       
        <!-- Question 2 -->
        <section>
          <h2>2. Where are the bins currently located on your property?</h2>
@@ -35,7 +38,7 @@
            <option value="other">Other</option>
          </select>
        </section>
-      
+       
        <!-- Question 3 -->
        <section>
          <h2>3. Do you have pets we should be aware of?</h2>
@@ -46,8 +49,7 @@
          </select>
        </section>
 
-
-       <!-- Question 4: Payment method -->
+       <!-- Question 4 -->
        <section>
          <h2>4. What is your preferred payment method?</h2>
          <select name="payment_method" required>
@@ -56,8 +58,8 @@
            <option value="Cash">Cash</option>
          </select>
        </section>
-      
-       <!-- Question 5: Contact method -->
+
+       <!-- Question 5 -->
        <section>
          <h2>5. What is your preferred contact method?</h2>
          <select name="contact_method" required>
@@ -67,23 +69,57 @@
          </select>
          <input type="text" name="contact_info" placeholder="Enter your phone or email" required>
        </section>
-    
-      
+
+       <!-- Question 6 -->
        <section>
-         <h2>3. Do we have permison to access your property?</h2>
-         <select name="pets" required>
+         <h2>6. Do we have permission to access your property?</h2>
+         <select name="property_access" required>
            <option value="" disabled selected>Select an option</option>
            <option value="yes">Yes</option>
            <option value="no">No</option>
          </select>
        </section>
-      
+
        <!-- Submit Button -->
        <section>
          <button type="submit">Submit</button>
        </section>
      </form>
+
+     <!-- Success Message -->
+     <div id="success-message" style="display: none; text-align: center; margin-top: 20px;">
+       <h2>Thank you! We’ve received your info 🧹</h2>
+       <p>We’ll contact you soon to start your BinButler service!</p>
+     </div>
    </main>
  </div>
+
+ <!-- JavaScript to handle form submission -->
+ <script>
+   document.getElementById("signupForm").addEventListener("submit", function(e) {
+     e.preventDefault(); // Prevent default form submission
+
+     const form = e.target;
+     const formData = new FormData(form);
+
+     fetch(form.action, {
+       method: "POST",
+       body: formData,
+     })
+     .then(response => {
+       if (response.ok) {
+         form.style.display = "none";
+         document.getElementById("success-message").style.display = "block";
+       } else {
+         alert("There was a problem submitting the form.");
+       }
+     })
+     .catch(error => {
+       console.error("Error!", error.message);
+       alert("There was an error. Please try again.");
+     });
+   });
+ </script>
 </body>
 </html>
+
