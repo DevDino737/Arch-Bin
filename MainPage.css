@@ -157,7 +157,7 @@ body, html {
     height: 350px;
     border-radius: 10px;
     margin-top: 20px;
-    position: relative;
+    position: absolute;
     left: center;
     top: 10px;
    
