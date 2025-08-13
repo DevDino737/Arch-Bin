@@ -181,7 +181,7 @@ body, html {
     border-radius: 50%;
     margin-top: 20px;
     position: relative;  /* so left works */
-    left: -10%;           /* increase from 5% to 15% for more right shift */
+    left: -5%;           /* increase from 5% to 15% for more right shift */
     top: 10px;
   }
   
