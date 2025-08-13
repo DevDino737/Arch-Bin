@@ -180,8 +180,8 @@ body, html {
     height: 300px;
     border-radius: 50%;
     margin-top: 20px;
-    position: relative;  /* so left works */
-    left: -2%;           /* increase from 5% to 15% for more right shift */
+    position: relative;  
+    left: -2%;           
     top: 10px;
   }
   
