@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BinButler Service Questions</title>
-  <link rel="stylesheet" href="loggedin.css">
+  <link rel="stylesheet" href="loggedin.css" />
 </head>
 <body>
   <nav class="navbar">
@@ -19,28 +19,39 @@
     </header>
 
     <main>
-      <form 
-        id="signupForm" 
-        action="https://script.google.com/macros/s/AKfycbyz0bU9beQmZ6nasZ5B_g6Mr_yH9rsacI-Mj5Fvobg8e2rpYycZX02nuWpq8Rg0ObfGbQ/exec" 
+      <form
+        id="signupForm"
+        action="https://script.google.com/macros/s/AKfycbyz0bU9beQmZ6nasZ5B_g6Mr_yH9rsacI-Mj5Fvobg8e2rpYycZX02nuWpq8Rg0ObfGbQ/exec"
         method="POST"
       >
-
         <!-- Question 1 -->
         <section>
           <h2>1. What is your address for bin service?</h2>
-          <input type="text" name="address" placeholder="Enter your address" required>
+          <input type="text" name="address" placeholder="Enter your address" required />
         </section>
 
         <!-- Question 2 -->
         <section>
           <h2>2. Where are the bins currently located on your property?</h2>
-          <select name="bin_location" required>
+
+          <!-- NOTE: id="bin_location" is required by the JS -->
+          <select id="bin_location" name="bin_location" required>
             <option value="" disabled selected>Select bin location</option>
             <option value="backyard">Backyard</option>
             <option value="side_yard">Side Yard</option>
             <option value="garage">Garage</option>
             <option value="other">Other</option>
           </select>
+
+          <!-- Hidden textbox: will appear only when "Other" is selected -->
+          <input
+            type="text"
+            id="other_location"
+            name="other_location"
+            placeholder="Please specify where your bins are located..."
+            style="display:none; margin-top:10px;"
+            aria-hidden="true"
+          />
         </section>
 
         <!-- Question 3 -->
@@ -71,7 +82,7 @@
             <option value="email">Email</option>
             <option value="text">Text Message</option>
           </select>
-          <input type="text" name="contact_info" placeholder="Enter your phone or email" required>
+          <input type="text" name="contact_info" placeholder="Enter your phone or email" required />
         </section>
 
         <!-- Question 6 -->
@@ -90,39 +101,61 @@
       </form>
 
       <!-- Success Message -->
-      <div 
-        id="success-message" 
-        style="display: none; text-align: center; margin-top: 20px;"
-      >
+      <div id="success-message" style="display: none; text-align: center; margin-top: 20px;">
         <h2>Thank you! We’ve received your info 🧹</h2>
         <p>We’ll contact you soon to start your BinButler service!</p>
       </div>
     </main>
   </div>
 
-  <!-- JavaScript to handle form submission -->
+  <!-- Scripts -->
   <script>
-    document.getElementById("signupForm").addEventListener("submit", function(e) {
-      e.preventDefault(); // Prevent default form submission
+    document.addEventListener("DOMContentLoaded", function () {
+      // Elements
+      const binSelect = document.getElementById("bin_location");
+      const otherInput = document.getElementById("other_location");
+      const form = document.getElementById("signupForm");
 
-      const form = e.target;
-      const formData = new FormData(form);
-
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-      })
-      .then(response => {
-        if (response.ok) {
-          form.style.display = "none";
-          document.getElementById("success-message").style.display = "block";
+      // Toggle function
+      function toggleOtherField() {
+        if (!binSelect || !otherInput) return;
+        if (binSelect.value === "other") {
+          otherInput.style.display = "block";
+          otherInput.required = true;
+          otherInput.setAttribute("aria-hidden", "false");
         } else {
-          alert("There was a problem submitting the form.");
+          otherInput.style.display = "none";
+          otherInput.required = false;
+          otherInput.value = "";
+          otherInput.setAttribute("aria-hidden", "true");
         }
-      })
-      .catch(error => {
-        console.error("Error!", error.message);
-        alert("There was an error. Please try again.");
+      }
+
+      // Run on change and once on load (handles back/forward or pre-filled)
+      binSelect.addEventListener("change", toggleOtherField);
+      toggleOtherField();
+
+      // Existing submit handler (kept inside DOMContentLoaded)
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            if (response.ok) {
+              form.style.display = "none";
+              document.getElementById("success-message").style.display = "block";
+            } else {
+              alert("There was a problem submitting the form.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error!", error);
+            alert("There was an error. Please try again.");
+          });
       });
     });
   </script>
