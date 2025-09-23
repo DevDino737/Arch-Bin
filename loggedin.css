@@ -79,5 +79,11 @@
     font-family: 'Charis', sans-serif;
     font-size: 26px;
     font-weight: bold;
+    color: black; /* default color */
   }
- 
+  
+  .logo:hover {
+    color: #008631; /* change this to the hover color you want */
+    cursor: pointer; /* optional: makes it feel clickable */
+  }
+  
