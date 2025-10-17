@@ -371,3 +371,19 @@ body, html {
     color: #333;
   }
   
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+}
