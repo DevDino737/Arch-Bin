@@ -38,7 +38,7 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 25px 20px;
     background-color: #fff;
     border-bottom: 1px solid #eaeaea;
     position: fixed;
@@ -47,14 +47,15 @@ body, html {
     z-index: 1000;
     font-family: 'Advent Pro', sans-serif;
     font-weight: bold;
-    transition: all 0.3s ease; /* smooth transition */
+    transition: all 0.3s ease; /* smooth shrink transition */
   }
   
-  /* when scrolled */
   .navbar.shrink {
     padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   }
+  
   
    
    
