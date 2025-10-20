@@ -1,402 +1,198 @@
-body, html {
+/* === GLOBAL STYLES === */
+html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  scroll-behavior: smooth;
   font-family: 'Advent Pro', sans-serif;
-  scroll-behavior: smooth; /* Smooth scrolling */
-  overflow-x: hidden;
-  }
-   
-   
-   /* Setting up sections for scroll snap */
-   section {
-    height: 100vh; /* Each section takes up full viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-align: start; /* Ensures sections snap into place */
-    padding: 20px;
-   }
-   
-   
-   .container {
-    width: 100%; /* Full width content */
-    max-width: 1200px; /* Max width for readability */
-    text-align: center;
-   }
-   
-   
-   /* Scroll snapping container */
-   main {
-    scroll-snap-type: y mandatory; /* Enables scroll snap on Y axis */
-    overflow-y: scroll; /* Allows vertical scrolling */
-    height: 100vh; /* Main container takes full viewport height */
-   }
-   
-   
-   .navbar {
-    display: flex;
+  background-color: #fdfdfd;
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  background-color: white;
+  border-bottom: 1px solid #eaeaea;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Shrinks navbar when scrolling */
+.navbar.shrink {
+  padding: 10px 30px;
+  background-color: #008631;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.navbar.shrink a {
+  color: white !important;
+}
+
+/* === NAV LINKS === */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #008631;
+}
+
+/* === LOGO === */
+.logo a {
+  text-decoration: none;
+  color: #008631;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/* === SIGN-UP BUTTON === */
+.signup-btn {
+  padding: 10px 20px;
+  background-color: #008631;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #006b27;
+}
+
+/* === PAGE SECTIONS === */
+.section {
+  min-height: 100vh;
+  padding: 120px 40px 60px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.section h1, 
+.section h2 {
+  color: #008631;
+}
+
+.section p {
+  max-width: 800px;
+  margin: 10px auto;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* === FRONT PAGE IMAGE === */
+#Frontpage img {
+  max-width: 90%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+/* === ABOUT SECTION === */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.about-container img {
+  max-width: 85%;
+  border-radius: 10px;
+}
+
+/* === RULES SECTION === */
+#Rules p {
+  text-align: left;
+  max-width: 700px;
+  margin: 10px auto;
+}
+
+/* === FOOTER (optional future use) === */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #f5f5f5;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* === RESPONSIVE DESIGN (Phones & Small Devices) === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    padding: 28px 25px;
-    background-color: white;
-    border-bottom: 1px solid #eaeaea;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    font-family: 'Advent Pro', sans-serif;
-    font-weight: bold;
-    transition: all 0.3s ease;
-  }
-  
-  .navbar.shrink {
-    padding: 8px 25px;
-    background-color: #008631; /* green for scroll */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  }
-  
-  .navbar.shrink a {
-    color: white !important;
-  }
-  
-  
-  
-   
-   
-   .logo a {
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-   }
-   
-   
-   .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-   }
-   
-   
-   .nav-links li a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    transition: color 0.3s;
-   }
-   
-   
-   .nav-links li a:hover {
-    color: #008631;
-   }
-   
-   
-   .Sign-Up a {
-    display: inline-block;
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 25px;
-   }
-   
-   
-   .Sign-Up a:hover {
-    background-color: #008631;
-   }
-   
-   
-   .logo a:hover {
-    color: #008631;
-   }
-   
-   
-   /* Section styling for smooth transitions */
-   #Frontpage {
-    background-color: #ffffff;
-   }
-   
-   
-   /* I commet out hire me section to remove it for now until we want to hire people. */
-   
-   
-   /* #hireme {
-    background-color: #00c04b;
-   } */
-   
-   
-   #whatcost {
-    background-color: #30b330;
-   }
-   
-   
-   #about {
-    background-color: #008631;
-   }
-   
-   
-   #Rules {
-    background-color: #126b32;
-   }
-   
-   
-   h1 {
-    font-size: 36px;
-    font-family: 'Advent Pro', sans-serif;
-    color: #000000;
-   }
-   
-   
-   h2 {
-    font-size: 38px;
-    font-family: 'Advent Pro', sans-serif;
-    color: #ffffff;
-    text-align: center;
-   }
-   
-   
-   p {
-    font-size: 25px;
-    font-family: 'Advent Pro', sans-serif;
-    color: #ffffff;
-   }
-   
-   
-   #Frontpage img {
-    width: 500px;
-    height: 350px;
-    border-radius: 10px;
-    margin: 20px auto 0; /* centers the image */
-    display: block;      /* needed for margin auto to work */
-  }
-  
-   
-   
-   #whatcost img {
-    width: 500px;
-    height: 350px;
-    border-radius: 10px;
-    margin-top: 20px;
-    position: relative;
-    left: 5%;
-    top: 10px;
-   }
-   
-   
-   
-   
-   #about img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    margin-top: 20px;
-    position: relative;  
-    left: 0%;           
-    top: 10px;
-  }
-  
-   
-   
-   #signup {
-    background-color: #f4f7f6; /* Light background for contrast */
-   }
-   
-   
-   .signup-form {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    margin: auto; /* Center the form */
-   }
-   
-   
-   .signup-form h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #007bff;
-    font-weight: bold;
-   }
-   
-   
-   .signup-form .form-group {
-    margin-bottom: 20px;
-    text-align: left;
-   }
-   
-   
-   .signup-form .form-group label {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 8px;
-    display: block;
-   }
-   
-   
-   .signup-form .form-group input {
-    width: 100%;
-    padding: 12px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
-   }
-   
-   
-   .signup-btn {
-    background-color: #136d35;
-    color: white;
-    padding: 10px 20px; /* Adjust padding for a more balanced look */
-    font-size: 1.1em;
-    width: auto; /* Ensure it doesn't take full width */
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: center; /* Center the text */
-   }
-   
-   
-   
-   
-   .signup-btn:hover {
-    background-color: #333;
-   }
-   
-   
-   /* Modal styling */
-   .modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1001; /* Above other elements */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
-   }
-   
-   
-   .modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 500px;
-   }
-   
-   
-   .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-   }
-   
-   
-   .close:hover,
-   .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-   }
-   
-   
-   
-   
-   .section {
-    background-color: #136d35; /* Green background */
-    color: white;
-    padding: 40px 20px;
-   }
-   
-   
-   .content h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2em;
-   }
-   
-   
-   .about-container {
-    display: flex; /* Flexbox for layout */
-    align-items: center; /* Align items vertically */
-    justify-content: space-between; /* Space between text and image */
-    gap: 20px; /* Space between elements */
-   }
-   
-   
-   .about-container p {
-    flex: 1; /* Allow the paragraph to take up more space */
-    font-size: 1.2em; /* Slightly larger text */
-    line-height: 1.6; /* Better readability */
-    margin: 0; /* Remove default margin */
-   }
-   
-   
-   .about-container img {
-    max-width: 300px; /* Limit the image size */
-    width: 100%; /* Make it responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Circular image */
-   }
-   
-   
-   @media (max-width: 768px) {
-    .about-container {
-      flex-direction: column; /* Stack text and image vertically */
-      text-align: center; /* Center-align content */
-    }
-   
-   
-    .about-container img {
-      max-width: 200px; /* Smaller image for mobile screens */
-    }
-   }
-   
-   
-  
-  .center-container {
-    display: flex;
-    flex-direction: column; /* stacks image and text vertically */
-    justify-content: center; /* vertical centering */
-    align-items: center;     /* horizontal centering */
-    height: 100vh;           /* full screen height */
-    text-align: center;
-    background-color: #f0f0f0; /* optional background */
-  }
-  
-  .center-image {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .center-text {
-    font-size: 24px;
-    font-weight: bold;
-    font-family: 'Advent Pro', sans-serif;
-    color: #333;
-  }
-  
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: center;
   }
 
-  nav ul {
+  .nav-links {
     flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    background: white;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+  }
+
+  .nav-links li {
+    margin: 8px 0;
+  }
+
+  .signup-btn {
+    margin-top: 10px;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 100px 20px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+/* === EXTRA SMALL SCREENS (iPhones < 400px) === */
+@media (max-width: 400px) {
+  .navbar {
+    padding: 15px;
+  }
+
+  .logo a {
+    font-size: 1.3rem;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .signup-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
   }
 
   h1 {
-    font-size: 28px;
-    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.95rem;
   }
 }

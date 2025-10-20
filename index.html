@@ -1,82 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>BinButler</title>
- <link rel="stylesheet" href="MainPage.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BinButler</title>
+  <link rel="stylesheet" href="MainPage.css">
 </head>
 <body>
- <nav class="navbar">
-   <div class="logo">
-     <a href="#Frontpage">BinButler</a>
-   </div>
-   <ul class="nav-links">    <!-- nav-links is for the navgtion bar-->
-     <!-- <li><a href="#Hireme">Hire Me!</a></li>  -->
-     <li><a href="#whatcost">What & Cost </a></li>
-     <li><a href="#about">About</a></li>
-     <li><a href="#Rules">Rules</a></li>
-   </ul>
-   <div class="Sign-Up">
-     <a href="logged.html"" class="signup-btn">Sign Up</a>
-   </div>
- </nav>
-
-
- <section class="section" id="Frontpage">
-   <div class="content">
-     <h1>We Take Your Bins Out, So You Don't Have To!</h1>
-     <p>We take the trash can to the curb and back!</p>
-     <img id="Frontpage"  src="https://i.ibb.co/mJGwXFS/Screenshot-2024-11-04-1-31-55-PM.png" border="0"></a>
-   </div>
- </section>
-  <!-- <section class="section" id="hireme">
-   <div class="content">
-     <h2>Hire Me!</h2>
-     <p>Contact us today to hire our trash collection services!</p>
-   </div>
- </section> -->
-  <section class="section" id="whatcost">
-   <div class="content">
-     <h2>What & Cost</h2>
-     <p>At Bin Butler, we make trash day easy by bringing your trash bin to the curb every Sunday evening for Monday pickup, and your recycling and yard waste bins every Tuesday evening for Wednesday pickup, then returning all bins neatly to your house on Monday and Wednesday afternoons. Our reliable, hassle-free service costs just $50 per month with no hidden fees. Sign up today and never worry about trash day again!</p>
-   </div>
- </section>
-  <section class="section" id="about">
-   <div class="content">
-     <h2>About</h2>
-     <div class="about-container">
-       <p>
-         Bin Butler is your neighborhood trash bin valet service that takes the hassle out of trash day. We bring your trash, recycling, and yard waste bins to the curb on pickup nights and return them safely to your home afterward. For just $50 a month, you get reliable, convenient service that saves you time and effort every week. Let BinButler handle your bins so you don't have to!
-       </p>
-       <img src="https://i.ibb.co/L8tp3XR/Screenshot-2025-01-10-12-37-53-AM.png" alt="Waste Bin">
-     </div>
-   </div>
- </section>
-  <section class="section" id="Rules">
-   <div class="content">
-     <h2>Rules</h2>
-     <p>1.Please make sure your garage door is open on pickup day if your bin is kept in the garage, so we can access it. If it’s closed, we won’t be able to complete the service that day.</p>
-     <p>2. If your bin is behind a gate, kindly leave it unlocked or provide a code so we can get through. Locked or tricky gates might mean we have to skip the pickup.</p>
-     <p>3.For everyone’s safety, please keep dogs and other pets secured during service. If pets are outside or not contained, we’ll need to skip the service.</p>
-     <p>4.Please keep your bin’s lid closed with no more than 12 inches open. Overloaded bins may be skipped for pickup.</p>
-     <p>5.If your bin is hard to reach due to obstacles like cars, furniture, yard equipment, etc., we may not be able to move it that day. Please keep the area clear to ensure smooth service.</p>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#Frontpage">BinButler</a>
     </div>
- </section>
+    <ul class="nav-links">
+      <li><a href="#whatcost">What & Cost</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#Rules">Rules</a></li>
+    </ul>
+    <div class="Sign-Up">
+      <a href="logged.html" class="signup-btn">Sign Up</a>
+    </div>
+  </nav>
 
+  <section class="section" id="Frontpage">
+    <div class="content">
+      <h1>We Take Your Bins Out, So You Don't Have To!</h1>
+      <p>We take the trash can to the curb and back!</p>
+      <img src="https://i.ibb.co/mJGwXFS/Screenshot-2024-11-04-1-31-55-PM.png" alt="Frontpage Image">
+    </div>
+  </section>
 
- <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const navbar = document.querySelector(".navbar");
-  
-    window.addEventListener("scroll", function() {
-      if (window.scrollY > 50) {
-        navbar.classList.add("shrink");
-      } else {
-        navbar.classList.remove("shrink");
-      }
-    });
-  });
-  </script>  
- </body>
+  <section class="section" id="whatcost">
+    <div class="content">
+      <h2>What & Cost</h2>
+      <p>At Bin Butler, we make trash day easy by bringing your trash bin to the curb every Sunday evening for Monday pickup, and your recycling and yard waste bins every Tuesday evening for Wednesday pickup, then returning all bins neatly to your house on Monday and Wednesday afternoons. Our reliable, hassle-free service costs just $50 per month with no hidden fees. Sign up today and never worry about trash day again!</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="content">
+      <h2>About</h2>
+      <div class="about-container">
+        <p>
+          Bin Butler is your neighborhood trash bin valet service that takes the hassle out of trash day. We bring your trash, recycling, and yard waste bins to the curb on pickup nights and return them safely to your home afterward. For just $50 a month, you get reliable, convenient service that saves you time and effort every week. Let BinButler handle your bins so you don't have to!
+        </p>
+        <img src="https://i.ibb.co/L8tp3XR/Screenshot-2025-01-10-12-37-53-AM.png" alt="Waste Bin">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="Rules">
+    <div class="content">
+      <h2>Rules</h2>
+      <p>1. Please make sure your garage door is open on pickup day if your bin is kept in the garage, so we can access it. If it’s closed, we won’t be able to complete the service that day.</p>
+      <p>2. If your bin is behind a gate, kindly leave it unlocked or provide a code so we can get through. Locked or tricky gates might mean we have to skip the pickup.</p>
+      <p>3. For everyone’s safety, please keep dogs and other pets secured during service. If pets are outside or not contained, we’ll need to skip the service.</p>
+      <p>4. Please keep your bin’s lid closed with no more than 12 inches open. Overloaded bins may be skipped for pickup.</p>
+      <p>5. If your bin is hard to reach due to obstacles like cars, furniture, yard equipment, etc., we may not be able to move it that day. Please keep the area clear to ensure smooth service.</p>
+    </div>
+  </section>
+
+  <script src="navbar.js"></script>
+</body>
 </html>
