@@ -1,11 +1,17 @@
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("load", () => {
   const navbar = document.querySelector(".navbar");
 
-  window.addEventListener("scroll", function() {
-    if (window.scrollY > 50) {
+  // safety check
+  if (!navbar) return;
+
+  // make sure we listen on the main document scroll
+  window.addEventListener("scroll", () => {
+    const scrollPos = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollPos > 50) {
       navbar.classList.add("shrink");
     } else {
       navbar.classList.remove("shrink");
     }
-  });
+  }, { passive: true });
 });
