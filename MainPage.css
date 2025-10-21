@@ -1,10 +1,34 @@
-/* === GLOBAL STYLES === */
-html, body {
+/* === GLOBAL SETTINGS === */
+body, html {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
+  height: 100%;
   font-family: 'Advent Pro', sans-serif;
-  background-color: #fdfdfd;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* === SECTION LAYOUT === */
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* === SCROLL SNAP CONTAINER === */
+main {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
 }
 
 /* === NAVBAR === */
@@ -12,40 +36,53 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 30px;
-  background-color: white;
+  padding: 25px 20px;
+  background-color: #fff;
   border-bottom: 1px solid #eaeaea;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
+  font-family: 'Advent Pro', sans-serif;
   font-weight: bold;
   transition: all 0.3s ease;
 }
 
-/* Shrinks navbar when scrolling */
+/* === NAVBAR SHRINK EFFECT === */
 .navbar.shrink {
-  padding: 10px 30px;
+  padding: 10px 20px;
   background-color: #008631;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .navbar.shrink a {
-  color: white !important;
+  color: #ffffff !important;
+}
+
+/* === LOGO === */
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #008631;
 }
 
 /* === NAV LINKS === */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
+  gap: 20px;
 }
 
 .nav-links li a {
   text-decoration: none;
   color: black;
+  font-size: 16px;
   transition: color 0.3s ease;
 }
 
@@ -53,86 +90,228 @@ html, body {
   color: #008631;
 }
 
-/* === LOGO === */
-.logo a {
+/* === SIGN UP BUTTON === */
+.Sign-Up a {
+  display: inline-block;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
   text-decoration: none;
-  color: #008631;
-  font-size: 1.6rem;
+  font-weight: bold;
+  margin-right: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.Sign-Up a:hover {
+  background-color: #008631;
+}
+
+/* === SECTION COLORS === */
+#Frontpage { background-color: #ffffff; }
+#whatcost { background-color: #30b330; }
+#about { background-color: #008631; }
+#Rules { background-color: #126b32; }
+
+/* === HEADINGS AND TEXT === */
+h1 {
+  font-size: 36px;
+  color: #000;
+}
+
+h2 {
+  font-size: 38px;
+  color: #ffffff;
+  text-align: center;
+}
+
+p {
+  font-size: 25px;
+  color: #ffffff;
+}
+
+/* === IMAGES === */
+#Frontpage img {
+  width: 500px;
+  height: 350px;
+  border-radius: 10px;
+  margin: 20px auto 0;
+  display: block;
+}
+
+#whatcost img {
+  width: 500px;
+  height: 350px;
+  border-radius: 10px;
+  margin-top: 20px;
+  position: relative;
+  left: 5%;
+  top: 10px;
+}
+
+#about img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-top: 20px;
+  position: relative;
+  left: 0%;
+  top: 10px;
+}
+
+/* === SIGNUP FORM === */
+#signup {
+  background-color: #f4f7f6;
+}
+
+.signup-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.signup-form h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #007bff;
   font-weight: bold;
 }
 
-/* === SIGN-UP BUTTON === */
-.signup-btn {
-  padding: 10px 20px;
-  background-color: #008631;
-  color: white;
-  text-decoration: none;
+.signup-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.signup-form .form-group label {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.signup-form .form-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  border: 1px solid #ccc;
   border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.signup-btn {
+  background-color: #136d35;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  width: auto;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
   transition: background-color 0.3s ease;
 }
 
 .signup-btn:hover {
-  background-color: #006b27;
+  background-color: #333;
 }
 
-/* === PAGE SECTIONS === */
-.section {
-  min-height: 100vh;
-  padding: 120px 40px 60px;
-  text-align: center;
-  box-sizing: border-box;
+/* === MODAL === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-.section h1, 
-.section h2 {
-  color: #008631;
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
 }
 
-.section p {
-  max-width: 800px;
-  margin: 10px auto;
-  line-height: 1.6;
-  color: #333;
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-/* === FRONT PAGE IMAGE === */
-#Frontpage img {
-  max-width: 90%;
-  height: auto;
-  margin-top: 20px;
-  border-radius: 12px;
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* === ABOUT SECTION === */
+.section {
+  background-color: #136d35;
+  color: white;
+  padding: 40px 20px;
+}
+
+.content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
 .about-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 25px;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.about-container p {
+  flex: 1;
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .about-container img {
-  max-width: 85%;
-  border-radius: 10px;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
 }
 
-/* === RULES SECTION === */
-#Rules p {
-  text-align: left;
-  max-width: 700px;
-  margin: 10px auto;
-}
-
-/* === FOOTER (optional future use) === */
-footer {
+/* === CENTER CONTAINER === */
+.center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   text-align: center;
-  padding: 30px 0;
-  background-color: #f5f5f5;
-  color: #555;
-  font-size: 0.9rem;
+  background-color: #f0f0f0;
 }
 
-/* === RESPONSIVE DESIGN (Phones & Small Devices) === */
+.center-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.center-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
   .navbar {
     flex-wrap: wrap;
@@ -142,7 +321,7 @@ footer {
   .nav-links {
     flex-direction: column;
     align-items: center;
-    background: white;
+    background: #fff;
     width: 100%;
     border-top: 1px solid #ddd;
     padding: 10px 0;
@@ -152,12 +331,13 @@ footer {
     margin: 8px 0;
   }
 
-  .signup-btn {
-    margin-top: 10px;
-  }
-
   .about-container {
     flex-direction: column;
+    text-align: center;
+  }
+
+  .about-container img {
+    max-width: 200px;
   }
 
   .section {
@@ -167,9 +347,16 @@ footer {
   img {
     max-width: 100%;
   }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 18px;
+  }
 }
 
-/* === EXTRA SMALL SCREENS (iPhones < 400px) === */
 @media (max-width: 400px) {
   .navbar {
     padding: 15px;
