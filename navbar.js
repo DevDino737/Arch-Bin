@@ -3,9 +3,7 @@ window.addEventListener("load", () => {
   if (!navbar) return;
 
   window.addEventListener("scroll", () => {
-    const scrollPos = window.scrollY || document.documentElement.scrollTop;
-
-    if (scrollPos > 50) {
+    if (window.scrollY > 50) {
       navbar.classList.add("shrink");
     } else {
       navbar.classList.remove("shrink");

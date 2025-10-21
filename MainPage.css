@@ -18,12 +18,6 @@ section {
   padding: 20px;
 }
 
-/* main {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-}
-
 /* Navbar styling */
 .navbar {
   display: flex;
@@ -43,7 +37,7 @@ section {
 /* Shrinking effect when scrolling */
 .navbar.shrink {
   padding: 10px 20px;
-  background-color: #008631; /* turns green when shrinking */
+  background-color: #008631;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
 }
 
