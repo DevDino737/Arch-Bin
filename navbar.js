@@ -1,3 +1,6 @@
+console.log("Navbar JS loaded!");
+
+
 window.addEventListener("DOMContentLoaded", () => {
   const navbar = document.querySelector(".navbar");
   if (!navbar) {
