@@ -1,4 +1,6 @@
 console.log("Navbar JS loaded!");
+alert("Navbar JS loaded!");
+
 
 
 window.addEventListener("DOMContentLoaded", () => {
