@@ -21,7 +21,7 @@
     </div>
   </nav>
 
-  <section class="section" id="Frontpage">
+  <section id="Frontpage">
     <div class="content">
       <h1>We Take Your Bins Out, So You Don't Have To!</h1>
       <p>We take the trash can to the curb and back!</p>
@@ -29,14 +29,14 @@
     </div>
   </section>
 
-  <section class="section" id="whatcost">
+  <section id="whatcost">
     <div class="content">
       <h2>What & Cost</h2>
       <p>At Bin Butler, we make trash day easy by bringing your trash bin to the curb every Sunday evening for Monday pickup, and your recycling and yard waste bins every Tuesday evening for Wednesday pickup, then returning all bins neatly to your house on Monday and Wednesday afternoons. Our reliable, hassle-free service costs just $50 per month with no hidden fees. Sign up today and never worry about trash day again!</p>
     </div>
   </section>
 
-  <section class="section" id="about">
+  <section id="about">
     <div class="content">
       <h2>About</h2>
       <div class="about-container">
@@ -48,38 +48,19 @@
     </div>
   </section>
 
-  <section class="section" id="Rules">
+  <section id="Rules">
     <div class="content">
       <h2>Rules</h2>
-      <p>1. Please make sure your garage door is open on pickup day if your bin is kept in the garage, so we can access it. If it’s closed, we won’t be able to complete the service that day.</p>
-      <p>2. If your bin is behind a gate, kindly leave it unlocked or provide a code so we can get through. Locked or tricky gates might mean we have to skip the pickup.</p>
-      <p>3. For everyone’s safety, please keep dogs and other pets secured during service. If pets are outside or not contained, we’ll need to skip the service.</p>
-      <p>4. Please keep your bin’s lid closed with no more than 12 inches open. Overloaded bins may be skipped for pickup.</p>
-      <p>5. If your bin is hard to reach due to obstacles like cars, furniture, yard equipment, etc., we may not be able to move it that day. Please keep the area clear to ensure smooth service.</p>
-      <p>6. We do not carry heavy pickup items to the curb, just your normal bins!!!</p>
+      <p>1. Please make sure your garage door is open on pickup day if your bin is kept in the garage, so we can access it.</p>
+      <p>2. If your bin is behind a gate, kindly leave it unlocked or provide a code.</p>
+      <p>3. Keep dogs and other pets secured during service.</p>
+      <p>4. Keep your bin’s lid closed with no more than 12 inches open.</p>
+      <p>5. Keep the area clear of obstacles.</p>
+      <p>6. We do not carry heavy items, just normal bins.</p>
     </div>
   </section>
 
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const navbar = document.querySelector(".navbar");
-      if (!navbar) {
-        console.error("Navbar not found!");
-        return;
-      }
-      console.log("Navbar script ready.");
-
-      window.addEventListener("scroll", () => {
-        console.log("Scroll position:", window.scrollY);
-        if (window.scrollY > 50) {
-          navbar.classList.add("shrink");
-          console.log("Navbar SHRUNK");
-        } else {
-          navbar.classList.remove("shrink");
-          console.log("Navbar NORMAL");
-        }
-      });
-    });
-  </script>
+  <!-- Link to JS -->
+  <script src="Navbar.js"></script>
 </body>
 </html>

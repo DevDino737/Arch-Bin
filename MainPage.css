@@ -2,7 +2,6 @@
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%;
   font-family: 'Advent Pro', sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -10,11 +9,10 @@ body, html {
 
 /* Section setup */
 section {
-  height: 110vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  /*scroll-snap-align: start; */
   padding: 20px;
 }
 
@@ -31,18 +29,19 @@ section {
   top: 0;
   z-index: 1000;
   font-weight: bold;
-  transition: all 0.3s ease;
+  transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
-/* Shrinking effect when scrolling */
+/* Shrinking effect */
 .navbar.shrink {
   padding: 10px 20px;
   background-color: #008631;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
 
 .navbar.shrink a {
   color: white;
+  transition: color 0.3s ease;
 }
 
 /* Logo */
@@ -52,10 +51,6 @@ section {
   text-decoration: none;
   color: black;
   transition: color 0.3s ease;
-}
-
-.logo a:hover {
-  color: #008631;
 }
 
 /* Navigation links */
@@ -70,10 +65,6 @@ section {
   color: black;
   font-size: 16px;
   transition: color 0.3s;
-}
-
-.nav-links li a:hover {
-  color: #008631;
 }
 
 /* Sign up button */
@@ -95,49 +86,21 @@ section {
 
 /* Section colors */
 #Frontpage { background-color: #ffffff; }
-#whatcost { background-color: #30b330; }
-#about { background-color: #008631; }
-#Rules { background-color: #126b32; }
+#whatcost { background-color: #30b330; color: white; }
+#about { background-color: #008631; color: white; }
+#Rules { background-color: #126b32; color: white; }
 
-/* Headings and text */
-h1 {
-  font-size: 36px;
-  color: #000;
-}
+/* Headings */
+h1 { font-size: 36px; }
+h2 { font-size: 38px; text-align: center; }
+p { font-size: 20px; }
 
-h2 {
-  font-size: 38px;
-  color: #ffffff;
-  text-align: center;
-}
-
-p {
-  font-size: 25px;
-  color: #ffffff;
-}
-
-/* Images */
-#Frontpage img {
-  width: 500px;
-  height: 350px;
-  border-radius: 10px;
-  margin: 20px auto 0;
-  display: block;
-}
-
-/* About section layout */
+/* About section */
 .about-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-}
-
-.about-container p {
-  flex: 1;
-  font-size: 1.2em;
-  line-height: 1.6;
-  margin: 0;
 }
 
 .about-container img {
@@ -147,30 +110,10 @@ p {
   border-radius: 50%;
 }
 
-/* Mobile responsive */
 @media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-container img {
-    max-width: 200px;
-  }
-
-  h1 {
-    font-size: 28px;
-    text-align: center;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    background-color: #fff;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    display: none;
-    padding: 10px;
-  }
+  .about-container { flex-direction: column; text-align: center; }
+  .about-container img { max-width: 200px; }
+  h1 { font-size: 28px; text-align: center; }
+  .nav-links { flex-direction: column; position: absolute; top: 60px; right: 0; display: none; padding: 10px; }
 }
 
