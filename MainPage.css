@@ -95,6 +95,26 @@ h1 { font-size: 36px; }
 h2 { font-size: 38px; text-align: center; }
 p { font-size: 20px; }
 
+/* Frontpage content tweaks */
+#Frontpage .content {
+  text-align: center; /* center text and image */
+}
+
+#Frontpage img {
+  width: 300px;       /* square for perfect circle */
+  height: 300px;
+  border-radius: 50%; /* make image circular */
+  display: block;
+  margin: 20px auto 0; /* center horizontally and add top margin */
+}
+
+#Frontpage p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #000;
+}
+
 /* About section */
 .about-container {
   display: flex;
@@ -110,10 +130,10 @@ p { font-size: 20px; }
   border-radius: 50%;
 }
 
+/* Mobile responsive */
 @media (max-width: 768px) {
   .about-container { flex-direction: column; text-align: center; }
   .about-container img { max-width: 200px; }
   h1 { font-size: 28px; text-align: center; }
   .nav-links { flex-direction: column; position: absolute; top: 60px; right: 0; display: none; padding: 10px; }
 }
-

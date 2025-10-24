@@ -3,7 +3,7 @@ const navbar = document.querySelector(".navbar");
 
 // Function to shrink navbar on scroll
 function handleNavbarScroll() {
-  if (window.scrollY > 10) { // small threshold
+  if (window.scrollY > 50) { // small threshold
     navbar.classList.add("shrink");
   } else {
     navbar.classList.remove("shrink");
