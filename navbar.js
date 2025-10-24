@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
+ window.addEventListener("DOMContentLoaded", () => {
   const navbar = document.querySelector(".navbar");
   if (!navbar) {
     console.error("Navbar not found!");
