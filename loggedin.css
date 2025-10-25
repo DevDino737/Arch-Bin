@@ -1,89 +1,137 @@
+/* Reset defaults */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General body setup */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* prevents cutting off on mobile */
+  min-height: 100vh;
+  padding: 20px; /* padding for small screens */
+}
+
+/* Container styling */
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header h1 {
+  text-align: center;
+  color: #2e8b57;
+  margin-bottom: 20px;
+  font-size: 1.8rem; /* responsive size */
+}
+
+/* Main content */
+main {
+  padding: 10px;
+}
+
+/* Section headings */
+section h2 {
+  color: #2e8b57;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+/* Lists */
+section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Buttons */
+button {
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3cb371;
+}
+
+/* Custom links */
+.custom-link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.custom-link:hover {
+  color: gray;
+  text-decoration: underline;
+}
+
+/* Logo styling */
+.logo {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  font-family: 'Charis', sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  color: black;
+  z-index: 1000;
+}
+
+.logo a {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+  font-weight: normal;
+}
+
+.logo:hover {
+  color: #008631;
+  cursor: pointer;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 15px;
   }
-   body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+
+  header h1 {
+    font-size: 1.5rem;
   }
-   .container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  section h2 {
+    font-size: 1.1rem;
   }
-   header h1 {
-    text-align: center;
-    color: #2e8b57;
-    margin-bottom: 20px;
-  }
-   main {
+
+  button {
+    font-size: 15px;
     padding: 10px;
   }
-   section h2 {
-    color: #2e8b57;
-    margin-bottom: 10px;
+
+  body {
+    padding: 10px;
+    align-items: flex-start; /* prevents content from being too centered */
   }
-   section ul {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-   button {
-    background-color: #2e8b57;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 20px;
-  }
-   button:hover {
-    background-color: #3cb371;
-  }
-   .custom-link {
-    color: black;           /* Text color */
-    text-decoration: none;  /* Remove underline */
-    font-weight: bold;      /* Make text bold */
-    cursor: pointer;        /* Show pointer on hover */
-  }
-   .custom-link:hover {
-    color: gray;            /* Change color on hover */
-    text-decoration: underline;  /* Underline on hover */
-  }
-   .logo a {
-    color: black;           /* Make text black */
-    text-decoration: none;  /* Remove underline */
-    cursor: default;        /* Normal arrow cursor, not pointer */
-    font-weight: normal;    /* Normal font weight */
-  }
-   .logo a:hover {
-    color: black;           /* Keep black on hover */
-    text-decoration: none;  /* No underline on hover */
-  }
- 
- 
-  .logo {
-    left: 10px;
-    top: 10px;
-    position: absolute;
-    font-family: 'Charis', sans-serif;
-    font-size: 26px;
-    font-weight: bold;
-    color: black; /* default color */
-  }
-  
-  .logo:hover {
-    color: #008631; /* change this to the hover color you want */
-    cursor: pointer; /* optional: makes it feel clickable */
-  }
-  
+}
