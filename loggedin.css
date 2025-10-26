@@ -88,16 +88,19 @@
     text-decoration: underline;
   }
   
-  /* LOGO */
   .logo {
-    position: absolute;
-    left: 15px;
+    position: fixed; /* stays in place even when scrolling */
     top: 15px;
+    right: 15px; /* move it to the top-right corner */
     font-family: 'Charis', sans-serif;
     font-size: 26px;
     font-weight: bold;
     color: black;
     z-index: 1000;
+    background-color: white; /* optional: keeps it readable when scrolling */
+    padding: 5px 10px; /* adds space around text */
+    border-radius: 8px; /* makes it look clean */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow for depth */
   }
   
   .logo a {
