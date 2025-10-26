@@ -97,7 +97,7 @@
     font-weight: bold;
     color: black;
     z-index: 1000;
-    background-color: white; /* optional: keeps it readable when scrolling */
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 5px 10px; /* adds space around text */
     border-radius: 8px; /* makes it look clean */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow for depth */
