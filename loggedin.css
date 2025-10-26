@@ -91,7 +91,7 @@
   .logo {
     position: fixed; /* stays in place even when scrolling */
     top: 15px;
-    right: 15px; /* move it to the top-right corner */
+    left: 15px; /* move it to the top-right corner */
     font-family: 'Charis', sans-serif;
     font-size: 26px;
     font-weight: bold;
