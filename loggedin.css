@@ -89,7 +89,7 @@
   }
   
   .logo {
-    position: absolute; /* stays in place even when scrolling */
+    position: relative; /* stays in place even when scrolling */
     top: 15px;
     left: 15px; /* move it to the top-right corner */
     font-family: 'Charis', sans-serif;
