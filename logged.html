@@ -72,5 +72,78 @@
             <option value="email">Email</option>
             <option value="text">Messenger</option>
           </select>
-          <input type="text" name="contact_info" placeholder="Enter your phone or email" re_
+          <input type="text" name="contact_info" placeholder="Enter your phone or email" required />
+        </section>
 
+        <section>
+          <h2>6. Do we have permission to access your property?</h2>
+          <select name="property_access" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="yes">Yes</option>
+          </select>
+        </section>
+
+        <section>
+          <button type="submit">Submit</button>
+        </section>
+      </form>
+
+      <div id="success-message" style="display: none;">
+        <h2>Thank you! We’ve received your info!</h2>
+        <p>We’ll contact you soon to start your BinButler service!</p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const binSelect = document.getElementById("bin_location");
+      const otherInput = document.getElementById("other_location");
+      const form = document.getElementById("signupForm");
+
+      function toggleOtherField() {
+        if (binSelect.value === "other") {
+          otherInput.style.display = "block";
+          otherInput.required = true;
+        } else {
+          otherInput.style.display = "none";
+          otherInput.required = false;
+          otherInput.value = "";
+        }
+      }
+
+      binSelect.addEventListener("change", toggleOtherField);
+      toggleOtherField();
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        if (formData.get("bin_location") === "other") {
+          const otherVal = formData.get("other_location").trim();
+          if (otherVal) {
+            formData.set("bin_location", otherVal);
+          }
+        }
+
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            if (response.ok) {
+              form.style.display = "none";
+              document.getElementById("success-message").style.display = "block";
+            } else {
+              alert("There was a problem submitting the form.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error!", error);
+            alert("There was an error. Please try again.");
+          });
+      });
+    });
+  </script>
+</body>
+</html>
