@@ -3,20 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BinButler Service Questions</title>
+  <title>BinButler Service Signup</title>
   <link rel="stylesheet" href="loggedin.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
-<body>
-  <nav class="navbar">
-    <div class="logo">
-      <a href="index.html">BinButler</a>
-    </div>
-  </nav>
 
+<body>
   <div class="container">
-    <header>
-      <h1>BinButler Service Signup</h1>
-    </header>
+    <div class="header">
+      <h1 class="logo"><span>Bin</span>Butler</h1>
+      <h1>Service Signup</h1>
+    </div>
 
     <main>
       <form
@@ -33,8 +30,6 @@
         <!-- Question 2 -->
         <section>
           <h2>2. Where are the bins currently located on your property?</h2>
-
-          <!-- NOTE: id="bin_location" is required by the JS -->
           <select id="bin_location" name="bin_location" required>
             <option value="" disabled selected>Select bin location</option>
             <option value="backyard">Backyard</option>
@@ -42,13 +37,11 @@
             <option value="garage">Garage</option>
             <option value="other">Other</option>
           </select>
-
-          <!-- Hidden textbox: will appear only when "Other" is selected -->
           <input
             type="text"
             id="other_location"
             name="other_location"
-            placeholder="Please specify where your bins are located..."
+            placeholder="Please specify..."
             style="display:none; margin-top:10px;"
             aria-hidden="true"
           />
@@ -94,27 +87,24 @@
           </select>
         </section>
 
-        <!-- Submit Button -->
         <section>
           <button type="submit">Submit</button>
         </section>
       </form>
 
-      <!-- Success Message -->
-      <div id="success-message" style="display: none; text-align: center; margin-top: 20px;">
+      <div id="success-message" style="display: none;">
         <h2>Thank you! We’ve received your info!</h2>
         <p>We’ll contact you soon to start your BinButler service!</p>
       </div>
     </main>
   </div>
 
-  <!-- Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const binSelect = document.getElementById("bin_location");
       const otherInput = document.getElementById("other_location");
       const form = document.getElementById("signupForm");
-  
+
       function toggleOtherField() {
         if (binSelect.value === "other") {
           otherInput.style.display = "block";
@@ -125,22 +115,21 @@
           otherInput.value = "";
         }
       }
-  
+
       binSelect.addEventListener("change", toggleOtherField);
       toggleOtherField();
-  
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         const formData = new FormData(form);
-  
-        // If "other" is selected, overwrite bin_location with typed text
+
         if (formData.get("bin_location") === "other") {
           const otherVal = formData.get("other_location").trim();
           if (otherVal) {
             formData.set("bin_location", otherVal);
           }
         }
-  
+
         fetch(form.action, {
           method: "POST",
           body: formData,
@@ -160,6 +149,5 @@
       });
     });
   </script>
-  
 </body>
 </html>
