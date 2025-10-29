@@ -1,11 +1,9 @@
-/* RESET DEFAULTS */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* GENERAL BODY SETUP */
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -17,7 +15,6 @@ body {
   padding: 20px;
 }
 
-/* CONTAINER */
 .container {
   background-color: white;
   padding: 25px;
@@ -27,38 +24,27 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* LOGO + HEADER WRAPPER */
 .header {
   text-align: center;
   margin-bottom: 25px;
 }
 
-/* LOGO */
-.logo {
-  font-family: 'Charis', sans-serif;
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: black;
-  margin-bottom: 8px;
+/* LINK STYLE FOR HEADER */
+.header-link {
+  text-decoration: none;
+  color: inherit;
 }
 
-.logo span {
-  color: #2e8b57;
-}
-
-/* HEADER TITLE */
 .header h1 {
   color: #2e8b57;
   font-size: 1.8rem;
   line-height: 1.2;
 }
 
-/* MAIN CONTENT */
 main {
   padding: 10px;
 }
 
-/* SECTION HEADINGS */
 section h2 {
   color: #2e8b57;
   margin-bottom: 10px;
