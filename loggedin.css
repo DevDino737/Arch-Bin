@@ -1,9 +1,11 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BODY */
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -15,6 +17,7 @@ body {
   padding: 20px;
 }
 
+/* CONTAINER */
 .container {
   background-color: white;
   padding: 25px;
@@ -24,23 +27,34 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* HEADER */
 .header {
   text-align: center;
   margin-bottom: 25px;
 }
 
-/* LINK STYLE FOR HEADER */
+/* Logo inside link */
 .header-link {
   text-decoration: none;
   color: black;
+}
+
+.header-link .logo {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2e8b57;
+  margin-top: 75px;
 }
 
 .header h1 {
   color: #2e8b57;
   font-size: 1.8rem;
   line-height: 1.2;
+  margin-top: 10px;
 }
 
+/* MAIN CONTENT */
 main {
   padding: 10px;
 }
@@ -51,7 +65,7 @@ section h2 {
   font-size: 1.2rem;
 }
 
-/* INPUTS AND SELECTS */
+/* INPUTS & SELECTS */
 input[type="text"],
 input[type="email"],
 input[type="number"],
@@ -109,7 +123,7 @@ input[type="submit"]:hover {
     padding: 18px;
   }
 
-  .logo {
+  .header-link .logo {
     font-size: 1.9rem;
   }
 
@@ -134,4 +148,9 @@ footer {
   margin-top: 20px;
   font-size: 0.9rem;
   color: #777;
+}
+
+.header-link .logo:hover {
+  color: #3cb371;
+  transition: color 0.3s;
 }
