@@ -17,6 +17,31 @@ body {
   padding: 20px;
 }
 
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  padding: 20px 40px;
+  text-align: right;
+  border-bottom: 1px solid #ddd;
+  z-index: 100;
+}
+
+/* LOGO TEXT */
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000000;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar .logo:hover {
+  color: #3cb371;
+  cursor: default;
+}
+
 /* CONTAINER */
 .container {
   background-color: white;
@@ -25,36 +50,18 @@ body {
   width: 100%;
   max-width: 800px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 60px; /* space under navbar */
 }
 
 /* HEADER */
-.header {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-/* Logo inside link */
-.header-link {
-  text-decoration: none;
-  color: black;
-}
-
-.header-link .logo {
-  display: inline-block;
+.container header h1 {
+  color: #2e8b57; /* green */
   font-size: 2rem;
-  font-weight: bold;
-  color: #2e8b57;
-  margin-top: 75px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.header h1 {
-  color: #2e8b57;
-  font-size: 1.8rem;
-  line-height: 1.2;
-  margin-top: 10px;
-}
-
-/* MAIN CONTENT */
+/* MAIN */
 main {
   padding: 10px;
 }
@@ -65,7 +72,7 @@ section h2 {
   font-size: 1.2rem;
 }
 
-/* INPUTS & SELECTS */
+/* INPUTS */
 input[type="text"],
 input[type="email"],
 input[type="number"],
@@ -116,18 +123,18 @@ input[type="submit"]:hover {
   color: #2e8b57;
 }
 
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .container {
     width: 95%;
     padding: 18px;
   }
 
-  .header-link .logo {
-    font-size: 1.9rem;
+  .navbar .logo {
+    font-size: 1.5rem;
   }
 
-  .header h1 {
+  .container header h1 {
     font-size: 1.4rem;
   }
 
@@ -149,48 +156,3 @@ footer {
   font-size: 0.9rem;
   color: #777;
 }
-
-.header-link .logo:hover {
-  color: #3cb371;
-  transition: color 0.3s;
-}
-
-/* NAVBAR */
-.navbar {
-  position: sticky;
-  top: 0;
-  background-color: #ffffff; /* white background */
-  padding: 20px 40px;
-  z-index: 100;
-  text-align: right; /* moves logo to the right */
-  border-bottom: 1px solid #ddd; /* subtle line at bottom */
-}
-
-/* LOGO LINK */
-.navbar .logo a {
-  text-decoration: none;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #000000; /* black text */
-  transition: color 0.3s ease;
-  margin-right: 10px;
-}
-
-/* LOGO HOVER EFFECT */
-.navbar .logo a:hover {
-  color: #3cb371; /* green hover */
-}
-
-/* ADD TOP MARGIN FOR PAGE CONTENT */
-.container {
-  margin-top: 60px; /* pushes content below navbar */
-}
-
-/* HEADER COLOR */
-.container header h1 {
-  color: #2e8b57; /* matching green */
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
