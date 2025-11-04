@@ -21,44 +21,46 @@ body {
 .navbar {
   position: sticky;
   top: 0;
-  background-color: #ffffff;
+  background-color: #ffffff; /* white background */
   padding: 20px 40px;
   text-align: right;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; /* subtle line */
+  border-radius: 0 0 15px 15px; /* rounded bottom edges */
   z-index: 100;
+  margin-bottom: 10px;
 }
 
 /* LOGO TEXT */
 .navbar .logo {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
-  color: #000000;
+  color: #000000; /* black text */
   margin-right: 10px;
   transition: color 0.3s ease;
 }
 
 .navbar .logo:hover {
-  color: #3cb371;
+  color: #3cb371; /* green hover */
   cursor: default;
 }
 
 /* CONTAINER */
 .container {
   background-color: white;
-  padding: 25px;
-  border-radius: 10px;
+  padding: 30px;
+  border-radius: 20px; /* more rounded edges */
   width: 100%;
   max-width: 800px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  margin-top: 60px; /* space under navbar */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  margin-top: 40px; /* pushes container down from top */
 }
 
 /* HEADER */
 .container header h1 {
   color: #2e8b57; /* green */
-  font-size: 2rem;
+  font-size: 2.2rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 /* MAIN */
@@ -68,8 +70,8 @@ main {
 
 section h2 {
   color: #2e8b57;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
 }
 
 /* INPUTS */
@@ -79,9 +81,9 @@ input[type="number"],
 textarea,
 select {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 12px; /* rounded inputs */
   font-size: 1rem;
   background-color: #fafafa;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -91,7 +93,7 @@ input:focus,
 textarea:focus,
 select:focus {
   border-color: #2e8b57;
-  box-shadow: 0 0 5px rgba(46, 139, 87, 0.3);
+  box-shadow: 0 0 6px rgba(46, 139, 87, 0.3);
   outline: none;
   background-color: #fff;
 }
@@ -102,50 +104,59 @@ input[type="submit"] {
   background-color: #2e8b57;
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 14px 20px;
   font-size: 16px;
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
   width: 100%;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
+  margin-top: 22px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover,
 input[type="submit"]:hover {
   background-color: #3cb371;
+  transform: translateY(-1px);
 }
 
 /* SUCCESS MESSAGE */
 #success-message {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 25px;
   color: #2e8b57;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .container {
     width: 95%;
-    padding: 18px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+    border-radius: 0 0 10px 10px;
   }
 
   .navbar .logo {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .container header h1 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
   }
 
   button,
   input[type="submit"] {
     font-size: 15px;
-    padding: 10px;
+    padding: 12px;
   }
 
   section h2 {
     font-size: 1.05rem;
+    margin-bottom: 10px;
   }
 }
 
