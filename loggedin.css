@@ -154,3 +154,43 @@ footer {
   color: #3cb371;
   transition: color 0.3s;
 }
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff; /* white background */
+  padding: 20px 40px;
+  z-index: 100;
+  text-align: right; /* moves logo to the right */
+  border-bottom: 1px solid #ddd; /* subtle line at bottom */
+}
+
+/* LOGO LINK */
+.navbar .logo a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000000; /* black text */
+  transition: color 0.3s ease;
+  margin-right: 10px;
+}
+
+/* LOGO HOVER EFFECT */
+.navbar .logo a:hover {
+  color: #3cb371; /* green hover */
+}
+
+/* ADD TOP MARGIN FOR PAGE CONTENT */
+.container {
+  margin-top: 60px; /* pushes content below navbar */
+}
+
+/* HEADER COLOR */
+.container header h1 {
+  color: #2e8b57; /* matching green */
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
