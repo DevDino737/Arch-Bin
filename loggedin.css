@@ -19,27 +19,26 @@ body {
 
 /* NAVBAR */
 .navbar {
-  position: sticky;
-  top: 0;
-  background-color: #ffffff; /* white background */
-  padding: 20px 40px;
-  text-align: right;
-  border-radius: 25px; /* fully rounded navbar edges */
+  position: fixed; /* ✅ change from sticky → fixed so it stays at top always */
+  top: 20px; /* ✅ moves it higher from very top edge */
+  right: 40px;
+  background-color: white; /* gives it a nice bubble look */
+  padding: 10px 25px;
+  border-radius: 25px; /* rounded navbar */
   z-index: 100;
-  margin-bottom: 20px; /* space below navbar */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* LOGO TEXT */
 .navbar .logo {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  color: #000000; /* black text */
+  color: #000000;
   transition: color 0.3s ease;
 }
 
 .navbar .logo:hover {
-  color: #3cb371; /* green hover */
+  color: #3cb371;
   cursor: default;
 }
 
@@ -47,16 +46,16 @@ body {
 .container {
   background-color: white;
   padding: 30px;
-  border-radius: 25px; /* fully rounded container */
+  border-radius: 25px;
   width: 100%;
   max-width: 800px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  margin-top: 30px; /* more space to push down slightly */
+  margin: 180px auto 40px auto; /* ✅ increased top margin so content sits lower */
 }
 
 /* HEADER */
 .container header h1 {
-  color: #2e8b57; /* green */
+  color: #2e8b57;
   font-size: 2.2rem;
   text-align: center;
   margin-bottom: 25px;
@@ -82,7 +81,7 @@ select {
   width: 100%;
   padding: 14px;
   border: 1px solid #ccc;
-  border-radius: 25px; /* fully rounded inputs */
+  border-radius: 25px;
   font-size: 1rem;
   background-color: #fafafa;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -105,7 +104,7 @@ input[type="submit"] {
   border: none;
   padding: 14px 20px;
   font-size: 16px;
-  border-radius: 25px; /* fully rounded buttons */
+  border-radius: 25px;
   cursor: pointer;
   width: 100%;
   margin-top: 22px;
@@ -127,19 +126,20 @@ input[type="submit"]:hover {
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-  .container {
-    width: 95%;
-    padding: 20px;
-    margin-top: 20px;
-  }
-
   .navbar {
-    padding: 15px 20px;
-    border-radius: 20px;
+    top: 10px; /* ✅ keeps logo nicely visible on mobile */
+    right: 15px;
+    padding: 8px 18px;
   }
 
   .navbar .logo {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+  }
+
+  .container {
+    width: 95%;
+    padding: 20px;
+    margin-top: 130px; /* ✅ slightly lower margin for mobile */
   }
 
   .container header h1 {
