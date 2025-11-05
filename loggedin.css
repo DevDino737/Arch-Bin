@@ -19,27 +19,28 @@ body {
 
 /* NAVBAR */
 .navbar {
-  position: fixed; /* ✅ change from sticky → fixed so it stays at top always */
-  top: 20px; /* ✅ moves it higher from very top edge */
-  right: 40px;
-  background-color: white; /* gives it a nice bubble look */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: white;
   padding: 10px 25px;
-  border-radius: 25px; /* rounded navbar */
+  border-radius: 25px;
   z-index: 100;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* LOGO TEXT */
+/* LOGO LINK */
 .navbar .logo {
   font-size: 1.8rem;
   font-weight: 700;
   color: #000000;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .navbar .logo:hover {
   color: #3cb371;
-  cursor: default;
+  cursor: pointer;
 }
 
 /* CONTAINER */
@@ -50,7 +51,7 @@ body {
   width: 100%;
   max-width: 800px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  margin: 180px auto 40px auto; /* ✅ increased top margin so content sits lower */
+  margin: 180px auto 40px auto;
 }
 
 /* HEADER */
@@ -127,8 +128,8 @@ input[type="submit"]:hover {
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .navbar {
-    top: 10px; /* ✅ keeps logo nicely visible on mobile */
-    right: 15px;
+    top: 10px;
+    left: 10px;
     padding: 8px 18px;
   }
 
@@ -139,7 +140,7 @@ input[type="submit"]:hover {
   .container {
     width: 95%;
     padding: 20px;
-    margin-top: 130px; /* ✅ slightly lower margin for mobile */
+    margin-top: 130px;
   }
 
   .container header h1 {
