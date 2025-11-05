@@ -12,16 +12,12 @@
 </head>
 
 <body>
-  <!-- NAVBAR with logo top-right -->
+  <!-- ✅ Clean navbar that links to home -->
   <nav class="navbar">
-    <div class="logo">BinButler</div>
-  </nav>
-
-   <nav class="navbar">
     <a href="index.html" class="logo">BinButler</a>
-   </nav>
+  </nav>
   
-   <div class="container">
+  <div class="container">
     <!-- Page header -->
     <header>
       <h1>Service Signup</h1>
@@ -93,11 +89,13 @@
           </select>
         </section>
 
+        <!-- ✅ Updated Submit Button -->
         <section>
-          <button type="submit">Submit</button>
+          <input type="submit" id="submit-btn" value="Submit">
         </section>
       </form>
 
+      <!-- ✅ Success Message (hidden by default) -->
       <div id="success-message" style="display: none;">
         <h2>Thank you! We’ve received your info!</h2>
         <p>We’ll contact you soon to start your BinButler service!</p>
@@ -110,7 +108,9 @@
       const binSelect = document.getElementById("bin_location");
       const otherInput = document.getElementById("other_location");
       const form = document.getElementById("signupForm");
+      const submitBtn = document.getElementById("submit-btn");
 
+      // Handle "Other" location toggle
       function toggleOtherField() {
         if (binSelect.value === "other") {
           otherInput.style.display = "block";
@@ -125,16 +125,22 @@
       binSelect.addEventListener("change", toggleOtherField);
       toggleOtherField();
 
+      // Form submit logic
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         const formData = new FormData(form);
 
+        // Handle custom location
         if (formData.get("bin_location") === "other") {
           const otherVal = formData.get("other_location").trim();
           if (otherVal) {
             formData.set("bin_location", otherVal);
           }
         }
+
+        // ✅ Disable button + show loading state
+        submitBtn.disabled = true;
+        submitBtn.value = "Submitting...";
 
         fetch(form.action, {
           method: "POST",
@@ -151,6 +157,11 @@
           .catch((error) => {
             console.error("Error!", error);
             alert("There was an error. Please try again.");
+          })
+          .finally(() => {
+            // ✅ Re-enable the button after response
+            submitBtn.disabled = false;
+            submitBtn.value = "Submit";
           });
       });
     });

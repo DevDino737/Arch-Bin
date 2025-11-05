@@ -167,3 +167,28 @@ footer {
   font-size: 0.9rem;
   color: #777;
 }
+
+/* Loading Spinner */
+.spinner {
+  border: 3px solid #ffffff; /* Light part */
+  border-top: 3px solid #2e8b57; /* Green spinning part */
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+button:disabled,
+input[type="submit"]:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+  transform: none;
+}
