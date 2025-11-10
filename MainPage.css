@@ -115,25 +115,33 @@ p { font-size: 20px; }
   color: #000;
 }
 
-/* About section */
-.about-container {
+/* What & Cost section */
+#whatcost .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
 
-.about-container img {
+#whatcost img {
   max-width: 300px;
   width: 100%;
   height: auto;
-  border-radius: 50%;
+  border-radius: 50%; /* optional, makes image circular */
 }
 
 /* Mobile responsive */
 @media (max-width: 768px) {
-  .about-container { flex-direction: column; text-align: center; }
-  .about-container img { max-width: 200px; }
+  #whatcost .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #whatcost img {
+    max-width: 200px;
+  }
+
   h1 { font-size: 28px; text-align: center; }
   .nav-links { flex-direction: column; position: absolute; top: 60px; right: 0; display: none; padding: 10px; }
 }
+
