@@ -116,12 +116,44 @@ p { font-size: 20px; }
 }
 
 /* What & Cost section */
+#whatcost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#whatcost h2 {
+  font-size: 38px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 40px;
+}
+
 #whatcost .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 40px;
+  max-width: 1000px;
 }
+
+#whatcost p {
+  flex: 1;
+  font-size: 20px;
+  line-height: 1.6;
+  color: white;
+  text-align: left;
+}
+
+#whatcost img {
+  flex: 1;
+  max-width: 300px;
+  border-radius: 50%;
+}
+
+
 
 #whatcost img {
   max-width: 300px;
@@ -141,6 +173,7 @@ p { font-size: 20px; }
     max-width: 200px;
   }
 
+  /* fix it later */
   h1 { font-size: 28px; text-align: center; }
   .nav-links { flex-direction: column; position: absolute; top: 60px; right: 0; display: none; padding: 10px; }
 }
